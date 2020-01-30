@@ -7,7 +7,7 @@ const divideBtn = document.getElementById('btn-divide');
 const currentResultOutput = document.getElementById('current-result');
 const currentCalculationOutput = document.getElementById('current-calculation');
 
-function outputResult(result, text) {
+function outputResult(result, text="nothing to Add") {
   currentResultOutput.textContent = result;
   currentCalculationOutput.textContent = text;
 }
