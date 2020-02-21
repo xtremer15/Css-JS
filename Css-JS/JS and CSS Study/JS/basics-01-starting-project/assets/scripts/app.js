@@ -13,19 +13,28 @@ function outputLog(operator, resultBeforeCalc, calcNumber) {
   outputResult(currentResult, calcDescription); //Calls the method from vendro.js file
 }
 
+function writeToLog(
+  operationIdentifier,
+  previousResult,
+  operationNumber,
+  newResult
+) {
+  const logEntry = {
+    operation: operationIdentifier,
+    previousResult: previousResult,
+    number: operationNumber,
+    result: newResult
+  };
+  logEntries.push(logEntry);
+  console.log(logEntries);
+}
+
 function add() {
   const enterenedNr = getUserNumberInput();
   const initialValue = currentResult;
   currentResult += enterenedNr;
   outputLog("+", initialValue, currentResult);
-  const logEntry = {
-    operation: "ADD",
-    previousResult: initialValue,
-    number: enterenedNr,
-    result: currentResult
-  };
-  logEntries.push(logEntry);
-  console.log(logEntries);
+  writeToLog("ADD", initialValue, enterenedNr, currentResult);
 }
 
 function subtract() {
@@ -33,18 +42,21 @@ function subtract() {
   const initialValue = currentResult;
   currentResult -= enterenedNr;
   outputLog("-", initialValue, currentResult);
+  writeToLog("SUBTRACT", initialValue, enterenedNr, currentResult);
 }
 function multiply() {
   const enterenedNr = getUserNumberInput();
   const initialValue = currentResult;
   currentResult *= enterenedNr;
   outputLog("*", initialValue, currentResult);
+  writeToLog("MULTIPLY", initialValue, enterenedNr, currentResult);
 }
 function divide() {
   const enterenedNr = getUserNumberInput();
   const initialValue = currentResult;
   currentResult /= enterenedNr;
   outputLog("/", initialValue, currentResult);
+  writeToLog("DIVIDE  ", initialValue, enterenedNr, currentResult);
 }
 
 addBtn.addEventListener("click", add);

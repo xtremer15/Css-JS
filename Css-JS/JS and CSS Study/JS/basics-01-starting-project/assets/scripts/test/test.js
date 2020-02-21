@@ -17,7 +17,7 @@ function createList(array, subarray) {
     ul.appendChild(button);
     for (let j = 0; j < subarray.length; j++) {
       const a = createSubElement("a", j);
-      ul.firstChild.appe  ndChild(a);
+      ul.firstChild.appendChild(a);
     }
   }
   elementToAppendAt.appendChild(ul);
