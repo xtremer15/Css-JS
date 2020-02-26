@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+#product-overview {
+  background: red;
+  padding: 20px;
+  /*margin: 20px;
+    border: 5px black solid; */
+  width: 50%;
+  height: 528px;
+}
+
+.section-title {
+  color: green;
+}
+
+#product-overview h1 {
+  color: white;
+  font-family: "Anton";
+}
+
+.main-header {
+  width: 100%;
+  background: #2ddf5c;
+  padding: 8px 16px;
+}
+
+.main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header__brand {
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.main-nav {
+  display: inline-block;
+  text-align: right;
+  width: calc(100% - 67px);
+  vertical-align: middle;
+}
+
+.main-nav__items {
+  list-style: none;
+}
+
+.main-nav__item {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: #0e4f1f;
+}
+
+.main-nav__link::after {
+  content: "Link)";
+}
+
+.main-nav__link:hover {
+  color: white;
+}
+.main-nav__link:active {
+  color: white;
+}
