@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Monse";
+}
+
+#content {
+  display: flex;
+  width: 100%;
+  height: 30px;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  list-style: none;
+  width: inherit;
+  text-align: center;
+}
+
+.item {
+  flex: 1;
+}

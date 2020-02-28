@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+
+  
+  #content {
+    display: flex;
+    width: 100%;
+    
+  }
+
+  ul{
+    width: i;
+  }
+
+  .items{
+    display: flex;  
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+  }
+
