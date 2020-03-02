@@ -1,0 +1,38 @@
+<html>
+<ul id="main">
+
+</ul>
+
+</html>
+<script type="text/javascript">
+    const BOOKS = [{
+            title: { label: "dristor.kebap", 
+            autor: ["1", "2", "3"],
+            anPublicare: 1920
+        },
+        {
+            title: "dristor.kebap",
+            autor: ["1", "2", "3"],
+            anPublicare: 1920
+        }
+    ]
+
+    function generateTitle(title) {
+        return `<li> Title ${title} </li>`;
+    }
+
+    function getAuthor(author) {
+        return;
+    }
+
+    function getYear(year) {
+        return;
+    }
+
+    function getRecord(record) {
+        const title = generateTitle(record.title);
+        const auth = generateTitle(record.autor);
+        const year = generateTitle(record.anPublicare);
+        return `<li><ul><li>${title}</li><li>${auth}</li><li>${year}</li></ul></li>`;
+    }
+</script>
