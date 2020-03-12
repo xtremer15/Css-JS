@@ -34,7 +34,15 @@ function calculateResult(calculationOperator) {
   const enterenedNr = getUserNumberInput();
   const initialValue = currentResult;
   let mathOperator;
-  if (calculationOperator === 'ADD') {
+  if (calculationOperator !== 'ADD' &&
+    calculationOperator !== 'SUBTRACT' &&
+    calculationOperator !== 'MULTIPLY' &&
+    calculationOperator !== 'DIVIDE' ||
+    !enterenedNr 
+  ) {
+    return
+  }
+  if (calculationOperator === "ADD") {
     currentResult += enterenedNr;
     mathOperator = '+'
   } else if (calculationOperator === 'SUBTRACT') {
@@ -48,8 +56,15 @@ function calculateResult(calculationOperator) {
     mathOperator = '/'
   }
 
+
+
+
   outputLog(mathOperator, initialValue, currentResult);
   writeToLog(calculationOperator, initialValue, enterenedNr, currentResult);
+}
+
+function operationType(calculationType) {
+
 }
 
 function add() {
