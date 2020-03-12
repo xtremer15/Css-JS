@@ -13,6 +13,7 @@ function outputLog(operator, resultBeforeCalc, calcNumber) {
   outputResult(currentResult, calcDescription); //Calls the method from vendro.js file
 }
 
+
 function writeToLog(
   operationIdentifier,
   previousResult,
