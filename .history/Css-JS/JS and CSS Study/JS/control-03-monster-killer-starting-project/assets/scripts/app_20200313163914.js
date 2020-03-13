@@ -9,7 +9,7 @@ let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
 
 const enteredValue = prompt("Maximum life for you and your monster", "100");
-chosenMaxLife = parseInt(enteredValue);
+ = parseInt(enteredValue);
 
 if (isNaN(chosenMaxLife) && chosenMaxLife <= 0) {
   chosenMaxLife = 100;
