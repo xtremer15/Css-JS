@@ -17,23 +17,13 @@ let lastLoggedEntry;
 function getMaxedLifeValues() {
   const enteredValue = prompt("Maximum life for you and the monster.", "100");
 
-  const parsedValue = parseInt(enteredValue);
-  if (isNaN(parsedValue) || parsedValue <= 0) {
-    throw {
-      message: "Invalid User input,is not a number"
-    };
+  let parsedValue = parseInt(enteredValue);
+  if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
+    chosenMaxLife = 100;
   }
   return parsedValue;
 }
-let chosenMaxedLife;
 
-try {
-  chosenMaxedLife = getMaxedLifeValues();
-} catch (error) {
-  console.log(error);
-  chosenMaxedLife = 100;
-  alert("You entered something wrong , default value of 100 was used.");
-}
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;

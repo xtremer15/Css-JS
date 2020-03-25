@@ -18,10 +18,10 @@ function getMaxedLifeValues() {
   const enteredValue = prompt("Maximum life for you and the monster.", "100");
 
   const parsedValue = parseInt(enteredValue);
-  if (isNaN(parsedValue) || parsedValue <= 0) {
-    throw {
-      message: "Invalid User input,is not a number"
-    };
+  if (isNaN(parsedValue) || parsedValue <= 0)) {
+    try {
+      message: "Invalid User input,is not a number";
+    }
   }
   return parsedValue;
 }

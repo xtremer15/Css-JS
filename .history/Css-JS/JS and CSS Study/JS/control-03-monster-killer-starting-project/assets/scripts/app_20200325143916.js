@@ -21,7 +21,7 @@ function getMaxedLifeValues() {
   if (isNaN(parsedValue) || parsedValue <= 0) {
     throw {
       message: "Invalid User input,is not a number"
-    };
+    }
   }
   return parsedValue;
 }
