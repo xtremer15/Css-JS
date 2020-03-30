@@ -83,5 +83,5 @@ startGameBtn.addEventListener("click", function startGame() {
     message = message + " lost";
   }
   alert(message);
-  gameIsRuning = false;
+  game
 });

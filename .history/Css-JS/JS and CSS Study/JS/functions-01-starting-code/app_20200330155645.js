@@ -79,9 +79,5 @@ startGameBtn.addEventListener("click", function startGame() {
     message = message + " had a draw";
   } else if (winner === PLAYER_WINS) {
     message = message + " won";
-  } else {
-    message = message + " lost";
   }
-  alert(message);
-  gameIsRuning = false;
 });
