@@ -35,7 +35,7 @@ const getComputerChoice = function() {
   }
 };
 
-const getWinner = (computerChoice, playerChoice) => {
+const getWinner = function(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
     return RESULT_DRAW;
   } else if (
@@ -72,6 +72,5 @@ startGameBtn.addEventListener("click", function startGame() {
   console.log("Game starting....");
   const playerSelection = getPlayerChoice();
   const computerChoice = getComputerChoice();
-  const winner = getWinner(computerChoice, playerSelection);
-  console.log(winner);
+  
 });

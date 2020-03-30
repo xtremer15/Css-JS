@@ -35,18 +35,11 @@ const getComputerChoice = function() {
   }
 };
 
-const getWinner = (computerChoice, playerChoice) => {
+const getWinner = function(computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
     return RESULT_DRAW;
-  } else if (
-    (computerChoice === ROCK && playerChoice === PAPER) ||
-    (computerChoice === PAPER && playerChoice === SCISSORS) ||
-    (computerChoice === SCISSORS && playerChoice === ROCK)
-  ) {
-    return PLAYER_WINS;
-  } else {
-    return COMPUTER_WINS;
-  }
+  }else if(computerChoice === )
+  {}
 };
 // const start = function startGame() {
 //     console.log("Game starting....");
@@ -72,6 +65,4 @@ startGameBtn.addEventListener("click", function startGame() {
   console.log("Game starting....");
   const playerSelection = getPlayerChoice();
   const computerChoice = getComputerChoice();
-  const winner = getWinner(computerChoice, playerSelection);
-  console.log(winner);
 });

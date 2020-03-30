@@ -35,7 +35,7 @@ const getComputerChoice = function() {
   }
 };
 
-const getWinner = (computerChoice, playerChoice) => {
+const getWinner = (computerChoice, playerChoice) {
   if (computerChoice === playerChoice) {
     return RESULT_DRAW;
   } else if (
