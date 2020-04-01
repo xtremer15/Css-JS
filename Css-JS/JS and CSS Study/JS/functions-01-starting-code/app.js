@@ -10,7 +10,7 @@ const COMPUTER_WINS = "COMPUTER WINS";
 
 let gameIsRuning = false;
 
-const getPlayerChoice = function() {
+const getPlayerChoice = function () {
   // Folosim metoda to upperCase pentru a evita introducerea de catre user in caractere mici
   const selection = prompt(
     `${ROCK},${PAPER} or ${SCISSORS} ?`,
@@ -18,12 +18,12 @@ const getPlayerChoice = function() {
   ).toUpperCase();
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
     alert(`Invalid Choice , We chose ${USER_DEFAULT_CHOICE} for you!`);
-    return USER_DEFAULT_CHOICE;
+    return;
   }
   return selection;
 };
 
-const getComputerChoice = function() {
+const getComputerChoice = function () {
   const randomValue = Math.random();
 
   if (randomValue < 0.34) {
@@ -35,7 +35,7 @@ const getComputerChoice = function() {
   }
 };
 
-const getWinner = (computerChoice, playerChoice) => {
+const getWinner = (computerChoice, playerChoice = USER_DEFAULT_CHOICE) => {
   if (computerChoice === playerChoice) {
     return RESULT_DRAW;
   } else if (
@@ -54,7 +54,7 @@ const getWinner = (computerChoice, playerChoice) => {
 // We can store functions in objs and they`re named methods
 // startGame();
 // const person = {
-//   name: "Max",
+//   name: "Mihai",
 //   greet: function greet() {
 //     console.log("Hello");
 //   }
@@ -70,11 +70,17 @@ startGameBtn.addEventListener("click", function startGame() {
   }
   gameIsRuning = true;
   console.log("Game starting....");
-  const playerSelection = getPlayerChoice();
+  const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
-  const winner = getWinner(computerChoice, playerSelection);
 
-  let message = `You picked ${playerSelection} and computer picked ${computerChoice} , you`;
+  let winner;
+  if (playerChoice) {
+    winner = getWinner(computerChoice, playerChoice);
+  } else {
+    winner = getWinner(computerChoice);
+  }
+
+  let message = `You picked ${playerChoice ? playerChoice : USER_DEFAULT_CHOICE} and computer picked ${computerChoice} , you`;
   if (winner === RESULT_DRAW) {
     message = message + " had a draw";
   } else if (winner === PLAYER_WINS) {
@@ -85,3 +91,32 @@ startGameBtn.addEventListener("click", function startGame() {
   alert(message);
   gameIsRuning = false;
 });
+
+
+// Not realated to the game
+
+const sumUp = (resultHandler, ...numbers) => {
+  const validateNumber = (number) => {
+    return isNaN(number) ? 0 : number;
+  }
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  resultHandler(sum);
+}
+
+const subtractUp = function (resultHandler, ...numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    sum -= num;
+  }
+  resultHandler(sum)
+}
+
+const showResult = (result, messageText) => {
+  alert(messageText + "  " + result)
+}
+
+console.log(sumUp(showResult, 1, 3, 5, 6, 1, -19))
+console.log(subtractUp(showResult, 1, 3, 5, 6, 1, -19))
