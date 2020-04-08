@@ -8,7 +8,12 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
+<<<<<<< Updated upstream
             "url": "http://localhost:8080",
+=======
+            // "runtimeExecutable": "",
+            "url": "file:///D:/Programming/JavaScript/Css-JS/Css-JS/JS%20and%20CSS%20Study/JS/basics-01-starting-project/index.html",
+>>>>>>> Stashed changes
             "webRoot": "${workspaceFolder}"
         }
     ]
