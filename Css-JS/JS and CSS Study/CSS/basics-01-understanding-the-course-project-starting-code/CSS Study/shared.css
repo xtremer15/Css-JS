@@ -8,12 +8,6 @@ body {
 }
 
 .main-header {
-<<<<<<< HEAD
-  width: 100%;
-  background: #2ddf5c;
-  padding: 8px 16px;
-  position: fixed;
-=======
     width: 100%;
     position: fixed;
     top: 0;
@@ -21,7 +15,6 @@ body {
     background: #2ddf5c;
     padding: 8px 16px;
     z-index: 1;
->>>>>>> 439540bc718ec964d6ebe6f99c0667e0473f3741
 }
 
 .main-header > div {
