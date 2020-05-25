@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-red {
+            background-color: rebeccapurple;
+            color: wheat;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="main-title" style="color:white;background-color: black;">Some title</h1>
+    <section class="bg-red">
+        <ul>
+            <li class="list-item">Item 1</li>
+            <li class="list-item">Item 2
+                <p>paragraf child of li 1</p>
+                <p>paragraf child of li 2</p>
+            </li>
+            <li class="list-item">Item 3 (Changed!)</li>
+        </ul>
+    </section>
+
+    <button>Toggle Visibility</button>
+    <input type="text" name="" value="default text">
+
+    <script src="selectingElementsExample.js"></script>
+</body>
+
+</html>
