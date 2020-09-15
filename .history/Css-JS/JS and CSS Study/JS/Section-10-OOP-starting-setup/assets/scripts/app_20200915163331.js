@@ -20,11 +20,9 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId, shouldRender = true) {
+  constructor(renderHookId) {
     this.hookId = renderHookId;
-    if (shouldRender) {
-      this.render();
-    }
+    this.render();
   }
 
   render() {}
@@ -84,9 +82,8 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
   constructor(product, renderHookId) {
-    super(renderHookId,false);
+    super(renderHookId);
     this.product = product;
-    this.render()
   }
 
   addToCart() {
@@ -134,7 +131,6 @@ class ProductList extends Component {
         89.99
       ),
     ];
-    this.renderProducts();
   }
 
   renderProducts() {
@@ -147,9 +143,7 @@ class ProductList extends Component {
     this.createRootElement("ul", "product-list", [
       new ElementAttribute("id", "prod-list"),
     ]);
-    if (this.products && this.products.length > 0) {
-      this.renderProducts();
-    }
+    if(this.products && this.products.)
   }
 }
 

@@ -86,7 +86,6 @@ class ProductItem extends Component {
   constructor(product, renderHookId) {
     super(renderHookId,false);
     this.product = product;
-    this.render()
   }
 
   addToCart() {

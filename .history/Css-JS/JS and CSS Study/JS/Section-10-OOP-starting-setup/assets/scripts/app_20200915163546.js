@@ -20,11 +20,9 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId, shouldRender = true) {
+  constructor(renderHookId,shouldRender = tru) {
     this.hookId = renderHookId;
-    if (shouldRender) {
-      this.render();
-    }
+    
   }
 
   render() {}
@@ -84,9 +82,8 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
   constructor(product, renderHookId) {
-    super(renderHookId,false);
+    super(renderHookId);
     this.product = product;
-    this.render()
   }
 
   addToCart() {
@@ -134,7 +131,7 @@ class ProductList extends Component {
         89.99
       ),
     ];
-    this.renderProducts();
+    this.renderProducts()
   }
 
   renderProducts() {

@@ -84,9 +84,8 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
   constructor(product, renderHookId) {
-    super(renderHookId,false);
+    super(renderHookId,fa);
     this.product = product;
-    this.render()
   }
 
   addToCart() {
