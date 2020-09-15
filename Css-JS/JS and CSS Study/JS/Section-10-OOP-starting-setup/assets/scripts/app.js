@@ -68,9 +68,10 @@ class ShoppingCart extends Component {
     }
 }
 
-class ProductItem {
+class ProductItem extends Component {
 
-    constructor(product) {
+    constructor(product, renderHookId) {
+        super(renderHookId)
         this.product = product
     }
 
@@ -79,8 +80,7 @@ class ProductItem {
     }
 
     renderItem() {
-        const prodEl = document.createElement("li")
-        prodEl.className = "product-item"
+        const prodEl = this.createRootElement("li", "product-item")
         prodEl.innerHTML = `
         <div>
         <img src="${this.product.imgURL}" alt="${this.product.title}">
@@ -93,15 +93,16 @@ class ProductItem {
         </div>`
         const buttonAddToCart = prodEl.querySelector("button")
         buttonAddToCart.addEventListener('click', this.addItemToCart.bind(this))
-        return prodEl
     }
 }
 
 
 
-class ProductList {
+class ProductList extends Component {
 
-    constructor() {}
+    constructor(renderHookId) {
+        super(renderHookId)
+    }
 
     products = [
 
@@ -112,30 +113,20 @@ class ProductList {
     ]
 
     render() {
-        const prodList = document.createElement("ul")
-        prodList.className = 'product-list'
+        this.createRootElement("ul", 'product-list', [new ElementAttribute("id", "prod-list")])
         for (const product of this.products) {
-            console.log(product);
-            const productItem = new ProductItem(product)
-            const productElement = productItem.renderItem();
-            prodList.append(productElement)
+            const productItem = new ProductItem(product, 'prod-list')
+            productItem.renderItem();
         }
-
-        return prodList;
     }
 }
 
 class Shop {
     renderShop() {
-        const renderHook = document.getElementById("app")
-
         this.cart = new ShoppingCart('app')
         this.cart.renderItems();
-        const prodList = new ProductList();
-        const prodListEl = prodList.render();
-
-
-        renderHook.append(prodListEl)
+        const prodList = new ProductList('app');
+        prodList.render();
     }
 }
 
